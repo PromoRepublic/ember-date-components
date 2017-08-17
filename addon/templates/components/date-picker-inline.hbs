@@ -5,7 +5,7 @@
       <button
         class="date-picker__header__button date-picker__header__button--previous"
         {{action 'gotoPreviousMonth'}}
-        disabled={{disabled}}
+        disabled={{disablesPreviosButton}}
       >
         &lt;
       </button>
@@ -13,7 +13,6 @@
       <button
         class="date-picker__header__button date-picker__header__button--next"
         {{action 'gotoNextMonth'}}
-
       >
         &gt;
       </button>
