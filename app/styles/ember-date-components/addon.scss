@@ -59,6 +59,16 @@ $date-picker-color-background: #eee !default;
   color: white;
   border-color: $date-picker-color-primary;
 }
+.date-picker__header__button:disabled {
+  opacity: 0.4;
+}
+
+.date-picker__header__button:disabled:hover {
+  background: none;
+  border-color: #aaa;
+  color: #333333;
+  opacity: 0.4;
+}
 
 .date-picker__header__button--previous {
   float: left;
@@ -262,5 +272,7 @@ $date-picker-color-background: #eee !default;
   background-color: lighten($date-picker-color-primary, 10%);
   color: #fff;
 }
+
+
 
 /* Time Picker End */
