@@ -5,7 +5,8 @@ import layout from '../templates/components/date-picker-inline';
 
 const {
   get,
-  set
+  set,
+  computed: { oneWay }
 } = Ember;
 
 export default DatePicker.extend({
@@ -16,7 +17,7 @@ export default DatePicker.extend({
    * @type {Boolean}
    * @public
    */
-  disablesPreviosButton: false,
+  disablesPreviosButton: oneWay('disablesPreviosButtonFlag'),
 
   actions: {
 
@@ -30,7 +31,7 @@ export default DatePicker.extend({
 
       set(this, 'currentMonth', month.clone().subtract(1, 'month'));
 
-      if (moment().isSame(get(this, 'currentMonth'), 'month')) {
+      if (moment().isSame(get(this, 'currentMonth'), 'month') && get(this, 'disablesPreviosButtonFlag')) {
         set(this, 'disablesPreviosButton', true);
       }
     },
