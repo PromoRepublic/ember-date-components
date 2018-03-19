@@ -166,7 +166,7 @@ export default Component.extend({
 
     // create one day object for every day in the month
     for (let i = 0; i < daysInMonth; i++) {
-      let day = currentMonth.clone().add(i, 'days');
+      let day = currentMonth.clone().hours(12).add(i, 'days').startOf('day');
       let dayObject = {
         date: day,
         dateString: day.format('YYYY-MM-DD'),
